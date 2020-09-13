@@ -1,0 +1,19 @@
+{
+  "plugins": [
+    "react-hot-loader/babel",
+    ["@babel/plugin-transform-runtime",
+    {
+      "regenerator": true
+    }],
+    "emotion",
+    "@babel/plugin-proposal-class-properties"
+  ],
+  "presets": [
+    "@babel/preset-react",
+    ["@babel/preset-env", {
+      "targets": {
+        "node": "current"
+      }
+    }]
+  ]
+}
