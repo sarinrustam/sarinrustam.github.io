@@ -38,3 +38,7 @@
 2. Установите зависимости командой ``npm install``
 3. Запустите сборку локально командой ``npm run start``
 4. Сборка запустится по адресу http://localhost:3000/
+
+# Контакты
+1. WhatsApp, Telegram: 8-919-773-43-11
+2. Email: lorienas@gmail.com
