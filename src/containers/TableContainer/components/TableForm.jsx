@@ -98,6 +98,7 @@ const TableForm = (props) => {
                   id="comment"
                   defaultValue={formik.values.comment}
                   placeholder="Добавьте заметку о тренировке"
+                  onChange={formik.handleChange}
                 />
               </FormGroup>
             </Col>

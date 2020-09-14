@@ -1,6 +1,7 @@
 const path = require(`path`);
 const webpack = require('webpack');
 const MomentLocalesPlugin = require(`moment-locales-webpack-plugin`);
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -8,7 +9,7 @@ module.exports = {
     './src/index.jsx',
   ],
   output: {
-    path: path.join(__dirname, `../public`),
+    path: path.join(__dirname, `../docs`),
     publicPath: '/',
     filename: 'bundle.js',
   },
@@ -41,19 +42,12 @@ module.exports = {
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: path.resolve(__dirname, `../public/index.html`)
+    }),
     new MomentLocalesPlugin({
       localesToKeep: ['ru']
     }),
-  ],
-  devServer: {
-    contentBase: './public',
-    historyApiFallback: true,
-    hot: true,
-    host: 'localhost',
-    port: 3000,
-    proxy: {
-      '/api': 'http://aspiritywebtemplate_serve:8080',
-    },
-  },
+  ]
 };
